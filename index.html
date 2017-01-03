@@ -1,48 +1,52 @@
 <!doctype html>
 <html>
-  <head>
-      <link href="https://s3.amazonaws.com/codecademy-content/projects/bootstrap.min.css" rel="stylesheet" />
+
+<head>
+    <link href="https://s3.amazonaws.com/codecademy-content/projects/bootstrap.min.css" rel="stylesheet" />
     <link href='https://fonts.googleapis.com/css?family=Roboto:500,300,700,400' rel='stylesheet' type='text/css'>
     <link href="css/main.css" rel="stylesheet" />
 
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
-  </head>
-  <body ng-app="myApp">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+</head>
+
+<body ng-app="myApp">
     <div class="header">
-      <div class="container">
-        <h1>Rate and Read</h1>
-      </div>
+        <div class="container">
+            <h1>Rate and Read</h1>
+        </div>
     </div>
 
     <div class="main" ng-controller="MainController">
-      <div class="container">
+        <div class="container">
 
-        <h1>{{ title }}</h1>
-        <h2>{{ promo }}</h2>
+            <h1>{{ title }}</h1>
+            <h2>{{ promo }}</h2>
 
-        <div ng-repeat="product in products" class="col-md-6"> 
-  				<div class="thumbnail"> 
-    				<img ng-src="{{ product.cover }}" width="315px" height="526px"> 
-    				<p class="title">{{ product.name }}</p> 
-				    <p class="price">{{ product.price | currency }}</p> 
-				    <p class="date">{{ product.pubdate | date }}</p> 
-				    <div class="rating">
-				    	<p class="likes" ng-click="plusOne($index)">+ {{ product.likes }} </p>
-              <p class="dislikes" ng-click="minusOne($index)">- {{product.dislikes}}</p>
-				    </div>
-  				</div> 
-				</div>
+            <div ng-repeat="product in products" class="col-md-6">
+                <div class="thumbnail">
+                    <img ng-src="{{ product.cover }}" width="315px" height="526px">
+                    <p class="title">{{ product.name }}</p>
+                    <p class="price">{{ product.price | currency }}</p>
+                    <p class="date">{{ product.pubdate | date }}</p>
+                    <div class="rating">
+                        <p class="likes" ng-click="plusOne($index)">+ {{ product.likes }} </p>
+                        <p class="dislikes" ng-click="minusOne($index)">- {{product.dislikes}}</p>
+                    </div>
+                </div>
+            </div>
 
-      </div>
+        </div>
     </div>
 
     <div class="footer">
-      <div class="container">
-        <img src="https://lh5.ggpht.com/sxnFjIWmIPhBg09VXkKdVY-Rwn7l1Bfxq-eo6wIM1d2wWHDApGk3w-3NN77Td_BwYz4=w300" width="50px" height="50px">
-        <h2>Kindle Available for iPhone and Android.</h2>
-        <a href="https://itunes.apple.com/us/app/kindle-read-ebooks-magazines/id302584613?mt=8"><img src="https://s3.amazonaws.com/codecademy-content/projects/shutterbugg/app-store.png" width="120px" /></a>
-        <a href="https://play.google.com/store/apps/details?id=com.amazon.kindle&hl=en"><img src="https://s3.amazonaws.com/codecademy-content/projects/shutterbugg/google-play.png" width="110px" /></a>
-      </div>
+        <div class="container">
+            <img src="https://lh5.ggpht.com/sxnFjIWmIPhBg09VXkKdVY-Rwn7l1Bfxq-eo6wIM1d2wWHDApGk3w-3NN77Td_BwYz4=w300" width="50px" height="50px">
+            <h2>Kindle Available for iPhone and Android.</h2>
+            <a href="https://itunes.apple.com/us/app/kindle-read-ebooks-magazines/id302584613?mt=8"><img src="https://s3.amazonaws.com/codecademy-content/projects/shutterbugg/app-store.png" width="120px" />
+            </a>
+            <a href="https://play.google.com/store/apps/details?id=com.amazon.kindle&hl=en"><img src="https://s3.amazonaws.com/codecademy-content/projects/shutterbugg/google-play.png" width="110px" />
+            </a>
+        </div>
     </div>
 
 
@@ -51,6 +55,6 @@
 
     <!-- Controllers -->
     <script src="js/controllers/MainController.js"></script>
-  </body>
-</html>
+</body>
 
+</html>
